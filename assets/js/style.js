@@ -218,7 +218,7 @@ new Chart(ctx, {
                 max: 5,
                 pointLabels: {
                     font: {
-                        size: 12 // Aumenta el tamaño de las etiquetas de las categorías
+                        size: 13 // Aumenta el tamaño de las etiquetas de las categorías
                     }
                 },
                 ticks: {
@@ -232,7 +232,7 @@ new Chart(ctx, {
             	legend: {
                 labels: {
                     font: {
-                        size: 12 // Tamaño del texto de la leyenda
+                        size: 13 // Tamaño del texto de la leyenda
                     }
                 }
             }
