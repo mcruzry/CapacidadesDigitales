@@ -153,7 +153,7 @@
             categories['Adoption & scaling'].push(parseInt(puntaje_20));
     
             const puntaje_21 = formData.get('puntaje_21');
-            if (!categories['Adoption & Scaling']) {
+            if (!categories['Adoption & scaling']) {
                 categories['Adoption & scaling'] = [];
             }
             categories['Adoption & scaling'].push(parseInt(puntaje_21));
