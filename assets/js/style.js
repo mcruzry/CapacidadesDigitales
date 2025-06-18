@@ -75,28 +75,28 @@
             categories['Talent'].push(parseInt(puntaje_7));
     
             const puntaje_8 = formData.get('puntaje_8');
-            if (!categories['Operating Model']) {
-                categories['Operating Model'] = [];
+            if (!categories['Operating model']) {
+                categories['Operating model'] = [];
             }
-            categories['Operating Model'].push(parseInt(puntaje_8));
+            categories['Operating model'].push(parseInt(puntaje_8));
     
             const puntaje_9 = formData.get('puntaje_9');
-            if (!categories['Operating Model']) {
-                categories['Operating Model'] = [];
+            if (!categories['Operating model']) {
+                categories['Operating model'] = [];
             }
-            categories['Operating Model'].push(parseInt(puntaje_9));
+            categories['Operating model'].push(parseInt(puntaje_9));
     
             const puntaje_10 = formData.get('puntaje_10');
-            if (!categories['Operating Model']) {
-                categories['Operating Model'] = [];
+            if (!categories['Operating model']) {
+                categories['Operating model'] = [];
             }
-            categories['Operating Model'].push(parseInt(puntaje_10));
+            categories['Operating model'].push(parseInt(puntaje_10));
     
             const puntaje_11 = formData.get('puntaje_11');
-            if (!categories['Operating Model']) {
-                categories['Operating Model'] = [];
+            if (!categories['Operating model']) {
+                categories['Operating model'] = [];
             }
-            categories['Operating Model'].push(parseInt(puntaje_11));
+            categories['Operating model'].push(parseInt(puntaje_11));
     
             const puntaje_12 = formData.get('puntaje_12');
             if (!categories['Technology']) {
@@ -147,28 +147,28 @@
             categories['Data'].push(parseInt(puntaje_19));
     
             const puntaje_20 = formData.get('puntaje_20');
-            if (!categories['Adoption & Scaling']) {
-                categories['Adoption & Scaling'] = [];
+            if (!categories['Adoption & scaling']) {
+                categories['Adoption & scaling'] = [];
             }
-            categories['Adoption & Scaling'].push(parseInt(puntaje_20));
+            categories['Adoption & scaling'].push(parseInt(puntaje_20));
     
             const puntaje_21 = formData.get('puntaje_21');
             if (!categories['Adoption & Scaling']) {
-                categories['Adoption & Scaling'] = [];
+                categories['Adoption & scaling'] = [];
             }
-            categories['Adoption & Scaling'].push(parseInt(puntaje_21));
+            categories['Adoption & scaling'].push(parseInt(puntaje_21));
     
             const puntaje_22 = formData.get('puntaje_22');
-            if (!categories['Adoption & Scaling']) {
-                categories['Adoption & Scaling'] = [];
+            if (!categories['Adoption & scaling']) {
+                categories['Adoption & scaling'] = [];
             }
-            categories['Adoption & Scaling'].push(parseInt(puntaje_22));
+            categories['Adoption & scaling'].push(parseInt(puntaje_22));
     
             const puntaje_23 = formData.get('puntaje_23');
-            if (!categories['Adoption & Scaling']) {
-                categories['Adoption & Scaling'] = [];
+            if (!categories['Adoption & scaling']) {
+                categories['Adoption & scaling'] = [];
             }
-            categories['Adoption & Scaling'].push(parseInt(puntaje_23));
+            categories['Adoption & scaling'].push(parseInt(puntaje_23));
     
             const averageScores = {};
             for (const category in categories) {
@@ -192,31 +192,54 @@
             }
 
             // Update the radar chart
-            const ctx = document.getElementById('resultsChart').getContext('2d');
-            const labels = Object.keys(averageScores);
-            const data = Object.values(averageScores);
-            new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Promedio por Categoría',
-                        data: data,
-                        backgroundColor: 'rgb(39, 104, 221)',
-                        borderColor: 'rgb(39, 104, 221)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        r: {
-                            beginAtZero: true,
-                            max: 5
-                        }
-                    }
-                }
-            });
-			
+	 
+	 
+const ctx = document.getElementById('resultsChart').getContext('2d');
+const labels = Object.keys(averageScores);
+const data = Object.values(averageScores);
+
+new Chart(ctx, {
+    type: 'radar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Promedio por categoría',
+            data: data,
+            backgroundColor: 'rgba(39, 104, 221, 0.2)',
+            borderColor: 'rgb(39, 104, 221)',
+            borderWidth: 2,
+            pointBackgroundColor: 'rgb(39, 104, 221)'
+        }]
+    },
+			options: {
+        	scales: {
+            r: {
+                beginAtZero: true,
+                max: 5,
+                pointLabels: {
+                    font: {
+                        size: 12 // Aumenta el tamaño de las etiquetas de las categorías
+                    }
+                },
+                ticks: {
+                    font: {
+                        size: 12 // Tamaño de los números en el eje radial
+                    }
+                }
+            }
+        },
+				plugins: {
+            	legend: {
+                labels: {
+                    font: {
+                        size: 12 // Tamaño del texto de la leyenda
+                    }
+                }
+            }
+        }
+    	}
+		});
+         	 
 			
         }
 
